@@ -14,8 +14,8 @@ public class RegisterSuccessPage extends Util {
         String actualText = getTextFromElement(By.xpath("//div[@class=\"result\"]"));
         String expectedText = "Your registration completed";
 
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Assert.assertEquals(actualText, expectedText);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        Assert.assertEquals(actualText, expectedText); // Assert of registrationPage
 
 
     }

@@ -11,7 +11,7 @@ public class MyStepsDefs {
 
     @Given("^user is on homepage$")
     public void user_is_on_homepage() {
-        homePage.UserOnHomePage();
+    homePage.VerifyTextofHomePage();
     }
     @When("^User clicks on register button$")
     public void user_clicks_on_register_button() {
@@ -23,11 +23,10 @@ public class MyStepsDefs {
         registerPage.userEnterRegistrationDetails();
     }
 
-    @When("^user enters all required -submit button$")
+    @When("^user enters all required submit button$")
     public void user_enters_all_required_submit_button() {
         registerPage.userClickOnRegisterSubmitButton();
     }
-
     @Then("^user should able to register sucessfuly$")
     public void user_should_able_to_register_sucessfuly() {
         registerSuccessPage.userIsOnRegisterPage();

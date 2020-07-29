@@ -3,7 +3,7 @@ package org.example;
 import org.openqa.selenium.By;
 
 public class RegisterPage extends Util {
-    LoadProp loadProp = new LoadProp();
+    LoadProp loadProp = new LoadProp(); //LoadProp Object Created
     private By _firstName = By.xpath("//input[@id=\"FirstName\"]");
     private By _lastName = By.xpath("//input[@id=\"LastName\"]");
     private By _dateOfBirthday = By.xpath("//select[@name=\"DateOfBirthDay\"]");
@@ -21,7 +21,6 @@ public class RegisterPage extends Util {
         selectFromDropDownByIndex(_dateOfBirthday,loadProp.getProperty("dateOfBirthday"));
         selectFromDropDownByVisibleText(_dateOfBirthMonth,loadProp.getProperty("dateOfBirthMonth"));
         selectFromDropDownByValue(_dateOfBirthyear,loadProp.getProperty("dateOfBirthyear"));
-        TypeText(_emailField,"shreyarthi+" + timestamp() + "@gmail.com");
         TypeText(_emailField, loadProp.getProperty("emailField")+timestamp()+loadProp.getProperty("emailid"));
         TypeText(_CompanyName,loadProp.getProperty("CompanyName"));
         TypeText(_password,loadProp.getProperty("password"));

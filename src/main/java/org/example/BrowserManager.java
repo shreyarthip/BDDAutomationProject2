@@ -13,36 +13,29 @@ public class BrowserManager extends  Util {
     LoadProp loadProp = new LoadProp();
 
     public void SetBrowser() {
-        String browserName = "chrome";// loadProp.getProperty("browserName");
+        String browserName = "chrome";// loadProp.getProperty("browserName")
+
+    //Check if parameter passed as 'chrome'
         if (browserName.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\BrowserDriver\\ChormeDriver\\chromedriver.exe");
             driver = new ChromeDriver();
-
         }
-
-
-//        if (browserName.equalsIgnoreCase("firefox"))
-//        {
-//            //create firefox instance
-//            System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\BrowserDriver\\geckodriver.exe");
-//            driver = new FirefoxDriver();
-//        }
-//        //Check if parameter passed as 'chrome'
-//        else if(browserName.equalsIgnoreCase("chrome"))
-//        {
-//            System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\BrowserDriver\\chromedriver.exe");
-//            driver = new ChromeDriver();
-//        }else {
-//        System.out.println("Browser is not correct");
-//    }
+        else if (browserName.equalsIgnoreCase("firefox"))
+        {
+            //create firefox instance
+            System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\BrowserDriver\\geckodriver.exe");
+            driver = new FirefoxDriver();
+        }
+        else {
+        System.out.println("Browser is not correct");
+    }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         driver.get("https://demo.nopcommerce.com/");
 
     }
+        public void CloseBrowser () {
+            driver.close();
+        }
 }
-//        public void CloseBrowser () {
-//            driver.close();
-//        }
-//    }
-//}
+

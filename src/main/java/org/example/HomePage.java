@@ -11,20 +11,16 @@ public class HomePage extends Util {
     private By _WelcomeTitleText = By.xpath("//div[@class=\"topic-block-title\"]/h2");
     String expectedTitleOfThePage = "Welcome to our store";
 
-    public void UserOnHomePage() {
-     // driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        getTextFromElement(_WelcomeTitleText);
-       // driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        Assert.assertEquals(_WelcomeTitleText, expectedTitleOfThePage);
-
+    public void VerifyTextofHomePage() { //Method to Assert homepage text
+        String expectedTitle = "Welcome to our store";
+        String actualText1 = getTextFromElement(By.xpath("//h2[text() ='Welcome to our store']"));
+        Assert.assertEquals(actualText1, expectedTitle);
     }
-    public void clickOnRegisterButton() {
+
+    public void clickOnRegisterButton() { //Method of RegisterButton
       driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         clickOnElement(_registerButton, 20);
     }
-
-
-
 }
 
 
